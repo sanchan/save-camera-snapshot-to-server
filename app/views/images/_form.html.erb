@@ -1,0 +1,18 @@
+<%= form_for(@image, :html => {:multipart => true}) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <video id="live" autoplay></video>
+  <canvas id="snapshot" style="display:none"></canvas>
+  <a id="snapshot-button" class="btn-success" href="#" onclick="snap()">Take a picture!</a>
+
+<% end %>

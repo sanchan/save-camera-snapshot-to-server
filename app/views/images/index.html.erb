@@ -1,0 +1,9 @@
+<%= render 'form' %>
+
+<div id="thumbs" >
+
+  <% @images.each do |image| %>
+    <img src="<%= image.cover_image.url if image.cover_image_uid %>">
+  <% end %>
+
+</div>
